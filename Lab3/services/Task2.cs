@@ -1,7 +1,5 @@
 //вариант 7
-using System.IO.Compression;
-using System.Runtime.CompilerServices;
-using static System.Math;
+
 
 class Task2
 {
@@ -15,8 +13,7 @@ class Task2
  string? inputK;
  double numberD;
  string ? inputD;
- double x = 0;
- 
+double x = 0;
     while (true)
 {
     Console.Write("Введите коэффициент z: ");
@@ -90,7 +87,7 @@ class Task2
     Console.WriteLine(y);
     
     Console.WriteLine("Выбирете,что делать дальше: ");
-    Console.WriteLine("1)Продолжить вычисления в заднии 2");
+    Console.WriteLine("1)Продолжить вычисления в задании 2");
     Console.WriteLine("2)Завершить вычисления в задании 2");
     string? input;
    int continueOrNot;

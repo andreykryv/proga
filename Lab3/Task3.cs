@@ -30,8 +30,8 @@ class Task3
             Console.WriteLine("Ошибка: неверный формат даты. Используйте дд.мм.гггг");
         }
          Console.WriteLine("Выбирете,что делать дальше: ");
-    Console.WriteLine("1)Продолжить вычисления в заднии 2");
-    Console.WriteLine("2)Завершить вычисления в задании 2");
+    Console.WriteLine("1)Продолжить вычисления в задании 3");
+    Console.WriteLine("2)Завершить вычисления в задании 3");
     string? input;
    int continueOrNot;
    

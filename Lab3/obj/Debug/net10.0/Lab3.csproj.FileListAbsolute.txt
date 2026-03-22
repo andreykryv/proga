@@ -15,3 +15,4 @@
 /home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/bin/Debug/net10.0/Spectre.Console.dll
 /home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/obj/Debug/net10.0/Lab3.csproj.AssemblyReference.cache
 /home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/obj/Debug/net10.0/Lab3.csproj.Up2Date
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/obj/Debug/net10.0/Lab3.sourcelink.json

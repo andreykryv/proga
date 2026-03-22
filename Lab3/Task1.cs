@@ -22,24 +22,34 @@ class Task1
         Console.WriteLine("Ошибка: введите корректное число!\n");
     }
 }
-    if (integerNumber >= 10 && integerNumber<= 99)
-    {
-        integerNumber = (integerNumber % 10) * 10 + (integerNumber / 10);
-        Console.WriteLine(integerNumber);
-    }
-     else if (integerNumber <= -10 && integerNumber >= -99)
-    {
-        integerNumber = (integerNumber % 10) * 10 + (integerNumber / 10);
-        Console.WriteLine(integerNumber);
-    }
+    if (integerNumber >= 10 && integerNumber <= 99)
+{
+    int tens = integerNumber / 10;
+    int units = integerNumber % 10;
+
+    if (units == 0)
+        Console.WriteLine("0" + tens);   
     else
-    {   Console.WriteLine(integerNumber);
+        Console.WriteLine(units * 10 + tens); 
+}
+     else if (integerNumber <= -10 && integerNumber >= -99)
+{
+    int tens = integerNumber / 10;
+    int units = integerNumber % 10;
+
+    if (units == 0)
+        Console.WriteLine("-0"  + (-tens));   
+    else
+        Console.WriteLine(units * 10 + tens); 
+}
+    else
+    {   Console.WriteLine($"число: {integerNumber} не двухзначное");
       
     
     }
     
     Console.WriteLine("Выбирете,что делать дальше: ");
-    Console.WriteLine("1)Продолжить вычисления в заднии 1");
+    Console.WriteLine("1)Продолжить вычисления в задании 1");
     Console.WriteLine("2)Завершить вычисления в задании 1");
     string? input;
    int continueOrNot;
