@@ -1,0 +1,17 @@
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/bin/Debug/net10.0/Lab3
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/bin/Debug/net10.0/Lab3.deps.json
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/bin/Debug/net10.0/Lab3.runtimeconfig.json
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/bin/Debug/net10.0/Lab3.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/bin/Debug/net10.0/Lab3.pdb
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/obj/Debug/net10.0/Lab3.GeneratedMSBuildEditorConfig.editorconfig
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/obj/Debug/net10.0/Lab3.AssemblyInfoInputs.cache
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/obj/Debug/net10.0/Lab3.AssemblyInfo.cs
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/obj/Debug/net10.0/Lab3.csproj.CoreCompileInputs.cache
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/obj/Debug/net10.0/Lab3.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/obj/Debug/net10.0/refint/Lab3.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/obj/Debug/net10.0/Lab3.pdb
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/obj/Debug/net10.0/Lab3.genruntimeconfig.cache
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/obj/Debug/net10.0/ref/Lab3.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/bin/Debug/net10.0/Spectre.Console.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/obj/Debug/net10.0/Lab3.csproj.AssemblyReference.cache
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab3/obj/Debug/net10.0/Lab3.csproj.Up2Date

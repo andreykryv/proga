@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/*.csproj",
+            "configuration": "Debug"
+        },
+        {
+            "name": "Run (Release)",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/*.csproj",
+            "configuration": "Release"
+        }
+    ]
+}

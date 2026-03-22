@@ -1,0 +1,14 @@
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab5/bin/Debug/net10.0/Lab5
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab5/bin/Debug/net10.0/Lab5.deps.json
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab5/bin/Debug/net10.0/Lab5.runtimeconfig.json
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab5/bin/Debug/net10.0/Lab5.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab5/bin/Debug/net10.0/Lab5.pdb
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab5/obj/Debug/net10.0/Lab5.GeneratedMSBuildEditorConfig.editorconfig
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab5/obj/Debug/net10.0/Lab5.AssemblyInfoInputs.cache
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab5/obj/Debug/net10.0/Lab5.AssemblyInfo.cs
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab5/obj/Debug/net10.0/Lab5.csproj.CoreCompileInputs.cache
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab5/obj/Debug/net10.0/Lab5.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab5/obj/Debug/net10.0/refint/Lab5.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab5/obj/Debug/net10.0/Lab5.pdb
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab5/obj/Debug/net10.0/Lab5.genruntimeconfig.cache
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab5/obj/Debug/net10.0/ref/Lab5.dll

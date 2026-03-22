@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "d6eVkom44g4=",
+  "success": true,
+  "projectFilePath": "/home/andrey/Документы/553504/second_sem_lrs/proga/Lab4/Lab4.csproj",
+  "expectedPackageFiles": [
+    "/home/andrey/.nuget/packages/spectre.console/0.54.0/spectre.console.0.54.0.nupkg.sha512"
+  ],
+  "logs": []
+}
