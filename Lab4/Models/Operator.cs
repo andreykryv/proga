@@ -69,7 +69,9 @@ class Operator
     }
     public void RemoveSubscribers(int count)
     {
-         subscriberCount -= count;
+          if (count > subscriberCount)
+        throw new ArgumentException("Нельзя удалить больше абонентов, чем есть.");
+    subscriberCount -= count;
     }
 
 

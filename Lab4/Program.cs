@@ -11,8 +11,7 @@ int taskNumber;
 
 
 
-while (true)
-{
+
     
     
 
@@ -195,4 +194,4 @@ switch (taskNumber)
 }
 
       
-}
+

@@ -1,7 +1,4 @@
-using System.ComponentModel;
-using System.Net.NetworkInformation;
-using System.Reflection.Metadata;
-using System.Runtime.CompilerServices;
+
 
 class Tariff
 {

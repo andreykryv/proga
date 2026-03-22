@@ -30,7 +30,7 @@ class Help
             string? input = Console.ReadLine();
             if (!string.IsNullOrWhiteSpace(input))
                 return input.Trim();
-            Console.Write("[red]Ошибка: строка не может быть пустой. Повторите ввод: ");
+            AnsiConsole.Markup("[red]Ошибка: строка не может быть пустой. Повторите ввод: [/]");
         }
     }
 
