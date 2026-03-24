@@ -49,7 +49,7 @@ class Task1
         Console.WriteLine("M на N нацело не делится");
     }
     Console.WriteLine("Выбирете,что делать дальше: ");
-    Console.WriteLine("1)Продолжить вычисления в заднии 1");
+    Console.WriteLine("1)Продолжить вычисления в задании 1");
     Console.WriteLine("2)Завершить вычисления в задании 1");
     string? input;
    int continueOrNot;

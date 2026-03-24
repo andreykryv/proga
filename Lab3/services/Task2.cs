@@ -77,10 +77,12 @@ double x = 0;
     if ( numberZ >= 0)
     {
         x = Math.Pow(numberZ,3);
+        Console.WriteLine("Ветка 2 (z^3)");
     }
     else
     {
-       x = numberZ * numberZ - numberZ;  
+       x = numberZ * numberZ - numberZ;
+       Console.WriteLine("Ветка 1 (z^2 - z)");  
     }
     double sin = Math.Sin(numberC * x + numberD * numberD + numberK * x * x);
     double y = Math.Pow(sin,3);
