@@ -1,8 +1,0 @@
-
-
-
-
-class Client
-{
-     List<Client> ;    
-}
