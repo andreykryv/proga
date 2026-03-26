@@ -1,11 +1,6 @@
 
 
 
-
-using System.Data.Common;
-using System.Dynamic;
-using System.IO.Pipelines;
-
 class Client
 {
      private int id;
@@ -36,5 +31,9 @@ class Client
     {
          decimal result = tariff.MonthlyFee + trafficMb * tariff.PricePerMb;
         return result;
+    }
+     public override string ToString()
+    {
+        return $"Абонент:{name} id:{id} тариф:{tariff} использовано интернета:{trafficMb} ";
     }
 }
