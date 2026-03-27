@@ -1,0 +1,42 @@
+//Porsche Macan
+//BMW 3 Series
+//Volkswagen Golf
+
+abstract class Car
+{
+    protected string  model;
+    protected int yearOfProduction; 
+
+    protected FuelType type;     
+    protected int horsePower; 
+
+    internal Car(string model, int yearOfProduction, 
+    FuelType type,int horsePower   )
+    {
+        this.model = model;
+        this.yearOfProduction = yearOfProduction;
+
+        this.type = type;
+        this.horsePower = horsePower;
+
+    }
+    
+    internal string Model => model;
+    internal int YearOfProduction => yearOfProduction;
+
+    internal FuelType Type => type;
+    internal int HorsePower => horsePower;
+
+
+    protected abstract void Drive(int km);
+
+    protected virtual void Refuel()
+    {
+        
+    }
+    
+    internal string PrintInfo()
+    {
+        return $"автомобиль {model} {yearOfProduction} года выпуска. {type} cиловая установка мощностью {horsePower} л.c";
+    }
+}
