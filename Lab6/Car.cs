@@ -34,6 +34,10 @@ abstract class Car
     {
         
     }
+    protected void Rename(string model)
+    {
+        this. model = model;
+    }
     
     internal string PrintInfo()
     {

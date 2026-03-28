@@ -2,7 +2,7 @@
 
 enum FuelType
 {
-    diesel,
-    gas,
-    electricity,
+    Diesel,
+    Gas,
+    Electricity,
 }

@@ -1,0 +1,5 @@
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.GeneratedMSBuildEditorConfig.editorconfig
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.AssemblyInfoInputs.cache
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.AssemblyInfo.cs
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.csproj.CoreCompileInputs.cache
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.sourcelink.json
