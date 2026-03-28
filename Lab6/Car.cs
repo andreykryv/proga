@@ -9,13 +9,14 @@ abstract class Car
 
     protected FuelType type;     
     protected int horsePower; 
+    protected int maxRange;
 
     internal Car(string model, int yearOfProduction, 
-    FuelType type,int horsePower   )
+    FuelType type,int horsePower, int maxRange   )
     {
         this.model = model;
         this.yearOfProduction = yearOfProduction;
-
+        this.maxRange = maxRange;
         this.type = type;
         this.horsePower = horsePower;
 
@@ -26,6 +27,7 @@ abstract class Car
 
     internal FuelType Type => type;
     internal int HorsePower => horsePower;
+    internal int MaxRange => maxRange;
 
 
     protected abstract void Drive(int km);

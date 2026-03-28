@@ -10,8 +10,9 @@ class BasicCar:Car
     
 
     internal BasicCar(int seats, int? engineDisplacement,BodyType body,
-    string model,int yearOfProduction, FuelType type, int horsePower, int availableRange)
-    :base(model,yearOfProduction, type,horsePower)
+    string model,int yearOfProduction, FuelType type, int horsePower, 
+    int availableRange, int maxRange)
+    :base(model,yearOfProduction, type,horsePower, maxRange)
     {   
         this.seats = seats;
         this.engineDisplacement = engineDisplacement;

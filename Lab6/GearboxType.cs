@@ -1,0 +1,8 @@
+
+
+
+enum GearboxType
+{
+    Manual,
+    Automatic
+}
