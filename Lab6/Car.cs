@@ -30,19 +30,19 @@ abstract class Car
     internal int MaxRange => maxRange;
 
 
-    protected abstract void Drive(int km);
+    protected internal abstract void Drive(int km);
 
-    protected virtual void Refuel()
+    protected internal virtual void Refuel()
     {
         
     }
-    protected void Rename(string model)
+    protected internal void Rename(string model)
     {
         this. model = model;
     }
     
-    internal string PrintInfo()
+    protected internal virtual string PrintInfo()
     {
-        return $"автомобиль {model} {yearOfProduction} года выпуска. {type} cиловая установка мощностью {horsePower} л.c";
+        return $"Автомобиль {model} {yearOfProduction} года выпуска. '\n' {type} cиловая установка мощностью {horsePower} л.c";
     }
 }

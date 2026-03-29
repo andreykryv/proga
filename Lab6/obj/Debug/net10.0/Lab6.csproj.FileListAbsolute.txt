@@ -2,4 +2,13 @@
 /home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.AssemblyInfoInputs.cache
 /home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.AssemblyInfo.cs
 /home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.csproj.CoreCompileInputs.cache
-/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.sourcelink.json
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/bin/Debug/net10.0/Lab6
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/bin/Debug/net10.0/Lab6.deps.json
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/bin/Debug/net10.0/Lab6.runtimeconfig.json
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/bin/Debug/net10.0/Lab6.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/bin/Debug/net10.0/Lab6.pdb
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/refint/Lab6.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.pdb
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.genruntimeconfig.cache
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/ref/Lab6.dll

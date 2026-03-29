@@ -5,7 +5,7 @@ sealed class ElectricCar:BasicCar
 
 
     internal ElectricCar(int batteryCapacityKwh,int kmPerKwh,string model,int yearOfProduction,FuelType type,int horsePower, 
-    int seats, int? engineDisplacement, BodyType body, int maxRange)
+    int seats, float? engineDisplacement, BodyType body, int maxRange)
     :base(seats,engineDisplacement,body,  model,yearOfProduction, type,horsePower,kmPerKwh * batteryCapacityKwh ,maxRange)
     {
         this.batteryCapacityKwh = batteryCapacityKwh;
@@ -16,24 +16,32 @@ sealed class ElectricCar:BasicCar
     internal int BatteryCapacityKwh => batteryCapacityKwh;
     internal int KmPerKwh => kmPerKwh;
     
-    internal override void Drive(int km)
+    protected internal override void Drive(int km)
     {
         if (km <= availableRange)
-        {
+        {   Console.WriteLine($"Машина проехала {km} км");
             availableRange -= km;
             batteryCapacityKwh -= km / kmPerKwh;
         }
 
         else
         {
-           Console.WriteLine($"Машина проехала {availableRange} и {type} закончился");
+           Console.WriteLine($"Машина проехала {availableRange} км и {type} закончился");
            availableRange = 0;
            batteryCapacityKwh = 0;
         }
     }
-    protected override void Refuel()
+    protected internal override void Refuel()
     {
         availableRange = maxRange;
-        Console.WriteLine($",Батарея {model} была заряжена на 100%");
+        Console.WriteLine($"Батарея {model} была заряжена на 100%");
+    }
+    protected internal override string PrintInfo()
+    {
+        return $@"        Автомобиль {model} {yearOfProduction} года выпуска.[ELECTRIC]
+        {type} cиловая установка мощностью {horsePower} л.c 
+        В кузове {body} и вместимостью {seats} мест.
+        C тяговой батареей на {batteryCapacityKwh} kwh
+        Запас хода: {availableRange} км";
     }
 }
