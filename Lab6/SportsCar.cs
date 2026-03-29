@@ -12,7 +12,7 @@ class SportsCar:BasicCar
     internal SportsCar(float accelerationTo100, int weightKg, GearboxType gearbox,
     string model,int yearOfProduction,FuelType type,int horsePower, int availableRange,
     int seats, int? engineDisplacement, BodyType body, int maxRange)
-    :base(seats,engineDisplacement,body, availableRange, maxRange, model,yearOfProduction, type,horsePower)
+    :base(seats,engineDisplacement,body,  model,yearOfProduction, type,horsePower,availableRange, maxRange)
     {
         this.accelerationTo100 = accelerationTo100;
         this.weightKg = weightKg;
