@@ -6,17 +6,17 @@ class BasicCar:Car
     protected internal  int seats;
     protected internal float? engineDisplacement;
     protected internal BodyType body;
-    protected internal int availableRange;
+    
     
 
     internal BasicCar(int seats, float? engineDisplacement,BodyType body,
     string model,int yearOfProduction, FuelType type, int horsePower, 
     int availableRange, int maxRange)
-    :base(model,yearOfProduction, type,horsePower, maxRange)
+    :base(model,yearOfProduction, type,horsePower, maxRange, availableRange)
     {   
         this.seats = seats;
         this.engineDisplacement = engineDisplacement;
-        this.availableRange = availableRange;
+
        
         
         
@@ -52,11 +52,7 @@ class BasicCar:Car
     {
         base.Rename(model);
     }
-    protected internal override void Refuel()
-    {
-        availableRange = maxRange;
-        Console.WriteLine($"{model} был заправлен");
-    }
+   
     protected internal override string PrintInfo()
     {
         return $@"        Автомобиль {model} {yearOfProduction} года выпуска.[BASIC] 

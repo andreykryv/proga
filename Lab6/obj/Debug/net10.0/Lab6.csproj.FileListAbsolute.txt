@@ -12,3 +12,6 @@
 /home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.pdb
 /home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.genruntimeconfig.cache
 /home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/ref/Lab6.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.csproj.AssemblyReference.cache
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/bin/Debug/net10.0/Spectre.Console.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab6/obj/Debug/net10.0/Lab6.csproj.Up2Date

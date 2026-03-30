@@ -10,15 +10,17 @@ abstract class Car
     protected FuelType type;     
     protected int horsePower; 
     protected int maxRange;
+    protected internal int availableRange;
 
     internal Car(string model, int yearOfProduction, 
-    FuelType type,int horsePower, int maxRange   )
+    FuelType type,int horsePower, int maxRange, int availableRange   )
     {
         this.model = model;
         this.yearOfProduction = yearOfProduction;
         this.maxRange = maxRange;
         this.type = type;
         this.horsePower = horsePower;
+        this.availableRange = availableRange;
 
     }
     
@@ -28,13 +30,15 @@ abstract class Car
     internal FuelType Type => type;
     internal int HorsePower => horsePower;
     internal int MaxRange => maxRange;
+    internal int AvailableRange => availableRange;
 
 
     protected internal abstract void Drive(int km);
 
     protected internal virtual void Refuel()
     {
-        
+        availableRange = maxRange;
+        Console.WriteLine($"{model} был заправлен");
     }
     protected internal void Rename(string model)
     {
