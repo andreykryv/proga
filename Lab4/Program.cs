@@ -74,77 +74,73 @@ while (true)
 
         case 3:
             if (!Validation.CheckOperator(op)) break;
-
             AnsiConsole.MarkupLine($"Текущий тариф: [cyan]{op!.CurrentTariffCost}[/] руб.");
             Console.Write("На сколько увеличить (руб.): ");
             decimal increase = Validation.ReadDecimal();
-
-            if (increase <= 0)
-                AnsiConsole.MarkupLine("[red]Ошибка: сумма должна быть положительной.[/]");
-            else
+            try
             {
                 op.TariffUp(increase);
                 AnsiConsole.MarkupLine($"[green]✔ Новый тариф: {op.CurrentTariffCost} руб.[/]");
             }
-
+            catch (ArgumentException ex)
+            {
+                AnsiConsole.MarkupLine($"[red]Ошибка: {Markup.Escape(ex.Message)}[/]");
+            }
             Validation.Pause();
             break;
 
         case 4:
             if (!Validation.CheckOperator(op)) break;
-
             AnsiConsole.MarkupLine($"Текущий тариф: [cyan]{op!.CurrentTariffCost}[/] руб.");
             Console.Write("На сколько уменьшить (руб.): ");
             decimal decrease = Validation.ReadDecimal();
-
-            if (decrease <= 0)
-                AnsiConsole.MarkupLine("[red]Ошибка: сумма должна быть положительной.[/]");
-            else if (op.CurrentTariffCost - decrease < 0)
-                AnsiConsole.MarkupLine("[red]Ошибка: тариф не может стать отрицательным.[/]");
-            else
+            try
             {
                 op.TariffDown(decrease);
                 AnsiConsole.MarkupLine($"[green]✔ Новый тариф: {op.CurrentTariffCost} руб.[/]");
             }
-
+            catch (ArgumentException ex)
+            {
+                AnsiConsole.MarkupLine($"[red]Ошибка: {Markup.Escape(ex.Message)}[/]");
+            }
+            catch (InvalidOperationException ex)
+            {
+                AnsiConsole.MarkupLine($"[red]Ошибка: {Markup.Escape(ex.Message)}[/]");
+            }
             Validation.Pause();
             break;
 
         case 5:
             if (!Validation.CheckOperator(op)) break;
-
             AnsiConsole.MarkupLine($"Текущее число абонентов: [cyan]{op!.SubscriberCount}[/]");
             Console.Write("Сколько добавить: ");
             int addCount = Validation.ReadInteger();
-
-            if (addCount <= 0)
-                AnsiConsole.MarkupLine("[red]Ошибка: число должно быть положительным.[/]");
-            else
+            try
             {
                 op.AddSubscribers(addCount);
                 AnsiConsole.MarkupLine($"[green]✔ Теперь абонентов: {op.SubscriberCount}[/]");
             }
-
+            catch (ArgumentException ex)
+            {
+                AnsiConsole.MarkupLine($"[red]Ошибка: {Markup.Escape(ex.Message)}[/]");
+            }
             Validation.Pause();
             break;
 
         case 6:
             if (!Validation.CheckOperator(op)) break;
-
             AnsiConsole.MarkupLine($"Текущее число абонентов: [cyan]{op!.SubscriberCount}[/]");
             Console.Write("Сколько удалить: ");
             int removeCount = Validation.ReadInteger();
-
-            if (removeCount <= 0)
-                AnsiConsole.MarkupLine("[red]Ошибка: число должно быть положительным.[/]");
-            else if (removeCount > op.SubscriberCount)
-                AnsiConsole.MarkupLine("[red]Ошибка: нельзя удалить больше абонентов, чем есть.[/]");
-            else
+            try
             {
                 op.RemoveSubscribers(removeCount);
                 AnsiConsole.MarkupLine($"[green]✔ Теперь абонентов: {op.SubscriberCount}[/]");
             }
-
+            catch (ArgumentException ex)
+            {
+                AnsiConsole.MarkupLine($"[red]Ошибка: {Markup.Escape(ex.Message)}[/]");
+            }
             Validation.Pause();
             break;
 

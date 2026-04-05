@@ -24,6 +24,8 @@ class Client
 
     internal void AddTraffic(decimal mb)
     {
+         if (mb < 0)
+            throw new ArgumentException("Количество трафика не может быть отрицательным.");
         trafficMb += mb;
        
     }

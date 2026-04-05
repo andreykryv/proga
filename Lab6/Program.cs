@@ -115,27 +115,29 @@ class Program
 }
 
         
-        DriveWithProgress(bmw3, 5000);
-try { bmw3.Refuel(); } 
-catch (Exception ex) { AnsiConsole.MarkupLine($"[red]Ошибка заправки: {Markup.Escape(ex.Message)}[/]"); }
-AnsiConsole.MarkupLine($"  [green]After refuel: {bmw3.availableRange} km[/]\n");
+      DriveWithProgress(bmw3, 5000);
+        try { bmw3.Refuel(); }
+        catch (Exception ex)
+         { AnsiConsole.MarkupLine($"[red]Ошибка заправки: {Markup.Escape(ex.Message)}[/]"); }
+        AnsiConsole.MarkupLine($"  [green]After refuel: {bmw3.availableRange} km[/]\n");
 
-DriveWithProgress(bmwM3, 5000);
-try { bmwM3.Refuel(); } 
-catch (Exception ex) { AnsiConsole.MarkupLine($"[red]Ошибка заправки: {Markup.Escape(ex.Message)}[/]"); }
-AnsiConsole.MarkupLine($"  [green]After refuel: {bmwM3.availableRange} km[/]\n");
+        DriveWithProgress(bmwM3, 5000);
+        try { bmwM3.Refuel(); }
+        catch (Exception ex) 
+        { AnsiConsole.MarkupLine($"[red]Ошибка заправки: {Markup.Escape(ex.Message)}[/]"); }
+        AnsiConsole.MarkupLine($"  [green]After refuel: {bmwM3.availableRange} km[/]\n");
 
-DriveWithProgress(bmwi3, 5000);
-try { bmwi3.Refuel(); } 
-catch (Exception ex) { AnsiConsole.MarkupLine($"[red]Ошибка зарядки: {Markup.Escape(ex.Message)}[/]"); }
-AnsiConsole.MarkupLine($"  [green]After charge: {bmwi3.availableRange} km[/]\n");
+        DriveWithProgress(bmwi3, 5000);
+        try { bmwi3.Refuel(); }
+        catch (Exception ex)
+         { AnsiConsole.MarkupLine($"[red]Ошибка зарядки: {Markup.Escape(ex.Message)}[/]"); }
+        AnsiConsole.MarkupLine($"  [green]After charge: {bmwi3.availableRange} km[/]\n");
 
-AnsiConsole.MarkupLine("[bold yellow]--- All Cars Drive 100 km ---[/]\n");
-foreach (var car in cars)
-{
-    DriveWithProgress(car, 100);
-}
-
+        AnsiConsole.MarkupLine("[bold yellow]--- All Cars Drive 100 km ---[/]\n");
+        foreach (var car in cars)
+        {
+            DriveWithProgress(car, 100);
+        }
     
     var table = new Table()
             .Border(TableBorder.Rounded)

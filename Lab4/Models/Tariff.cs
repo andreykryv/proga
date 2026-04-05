@@ -19,14 +19,17 @@ class Tariff
 
 
      public static void IncreaseCost(decimal amount)
-     {  
-          tariffCost += amount;
-     }
+{
+    if (amount <= 0)
+        throw new ArgumentException("Сумма увеличения должна быть положительной.");
+    tariffCost += amount;
+}
      public static void DecreaseCost(decimal amount)
-     {
-           
-     
-        tariffCost -= amount;
+     {if (amount <= 0)
+        throw new ArgumentException("Сумма уменьшения должна быть положительной.");
+    if (tariffCost - amount < 0)
+        throw new InvalidOperationException("Тариф не может стать отрицательным.");
+    tariffCost -= amount;
 }
 
 

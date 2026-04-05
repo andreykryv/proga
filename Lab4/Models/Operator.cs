@@ -60,8 +60,10 @@ class Operator
     }
     public void  AddSubscribers(int count)
     {
-         subscriberCount += count;
-    }
+          if (count <= 0)
+        throw new ArgumentException("Количество добавляемых абонентов должно быть положительным.");
+    subscriberCount += count;
+}
     public void RemoveSubscribers(int count)
     {
           if (count > subscriberCount)
