@@ -1,49 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {
-      "Spectre.Console/0.54.0": {
-        "type": "package",
-        "compile": {
-          "lib/net10.0/Spectre.Console.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net10.0/Spectre.Console.dll": {
-            "related": ".xml"
-          }
-        }
-      }
-    }
+    "net10.0": {}
   },
-  "libraries": {
-    "Spectre.Console/0.54.0": {
-      "sha512": "StDXCFayfy0yB1xzUHT2tgEpV1/HFTiS4JgsAQS49EYTfMixSwwucaQs/bIOCwXjWwIQTMuxjUIxcB5XsJkFJA==",
-      "type": "package",
-      "path": "spectre.console/0.54.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "lib/net10.0/Spectre.Console.dll",
-        "lib/net10.0/Spectre.Console.xml",
-        "lib/net8.0/Spectre.Console.dll",
-        "lib/net8.0/Spectre.Console.xml",
-        "lib/net9.0/Spectre.Console.dll",
-        "lib/net9.0/Spectre.Console.xml",
-        "lib/netstandard2.0/Spectre.Console.dll",
-        "lib/netstandard2.0/Spectre.Console.xml",
-        "logo.png",
-        "spectre.console.0.54.0.nupkg.sha512",
-        "spectre.console.nuspec"
-      ]
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net10.0": [
-      "Spectre.Console >= 0.54.0"
-    ]
+    "net10.0": []
   },
   "packageFolders": {
     "/home/andrey/.nuget/packages/": {}
@@ -51,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/andrey/Документы/553504/second_sem_lrs/proga/Lab4/Lab4.csproj",
-      "projectName": "Lab4",
-      "projectPath": "/home/andrey/Документы/553504/second_sem_lrs/proga/Lab4/Lab4.csproj",
+      "projectUniqueName": "/home/andrey/Документы/553504/second_sem_lrs/proga/Lab7/Lab7.csproj",
+      "projectName": "Lab7",
+      "projectPath": "/home/andrey/Документы/553504/second_sem_lrs/proga/Lab7/Lab7.csproj",
       "packagesPath": "/home/andrey/.nuget/packages/",
-      "outputPath": "/home/andrey/Документы/553504/second_sem_lrs/proga/Lab4/obj/",
+      "outputPath": "/home/andrey/Документы/553504/second_sem_lrs/proga/Lab7/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/andrey/.nuget/NuGet/NuGet.Config"
@@ -82,17 +44,11 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net10.0": {
         "targetAlias": "net10.0",
-        "dependencies": {
-          "Spectre.Console": {
-            "target": "Package",
-            "version": "[0.54.0, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",
@@ -109,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.103/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

@@ -80,42 +80,61 @@ class Program
     AnsiConsole.MarkupLine("\n[bold yellow]--- Demonstration: Driving & Refueling ---[/]\n");
 
     void DriveWithProgress(Car car, int distance)
+{
+    string model = Markup.Escape(GetModel(car));
+    AnsiConsole.MarkupLine($"[bold]Driving {model} for {distance} km...[/]");
+    AnsiConsole.Progress()
+        .Start(ctx =>
         {
-            string model = Markup.Escape(GetModel(car)); 
-            AnsiConsole.MarkupLine($"[bold]Driving {model} for {distance} km...[/]");
-            AnsiConsole.Progress()
-                .Start(ctx =>
-                {
-                    var task = ctx.AddTask($"[green]Driving {model}[/]", new ProgressTaskSettings { MaxValue = distance });
-                    while (!ctx.IsFinished)
-                    {
-                        if (task.Value + 10 >= distance)
-                            task.Increment(distance - (int)task.Value);
-                        else
-                            task.Increment(10);
-                        Thread.Sleep(100);
-                    }
-                });
-            car.Drive(distance);
-            AnsiConsole.MarkupLine($"  [blue]Remaining range: {car.availableRange} km[/]");
-        }
+            var task = ctx.AddTask($"[green]Driving {model}[/]", 
+                new ProgressTaskSettings { MaxValue = distance });
+            while (!ctx.IsFinished)
+            {
+                if (task.Value + 10 >= distance)
+                    task.Increment(distance - (int)task.Value);
+                else
+                    task.Increment(10);
+                Thread.Sleep(100);
+            }
+        });
+
+    try
+    {
+        car.Drive(distance);
+        AnsiConsole.MarkupLine($"  [blue]Remaining range: {car.availableRange} km[/]");
+    }
+    catch (InvalidOperationException ex)
+    {
+        AnsiConsole.MarkupLine($"  [red]Ошибка: {Markup.Escape(ex.Message)}[/]");
+        AnsiConsole.MarkupLine($"  [blue]Remaining range: {car.availableRange} km[/]");
+    }
+    catch (ArgumentException ex)
+    {
+        AnsiConsole.MarkupLine($"  [red]Ошибка: {Markup.Escape(ex.Message)}[/]");
+    }
+}
 
         
         DriveWithProgress(bmw3, 5000);
-        bmw3.Refuel();
-        AnsiConsole.MarkupLine($"  [green]After refuel: {bmw3.availableRange} km[/]\n");
-        DriveWithProgress(bmwM3, 5000);
-        bmwM3.Refuel();
-        AnsiConsole.MarkupLine($"  [green]After refuel: {bmwM3.availableRange} km[/]\n");    
-        DriveWithProgress(bmwi3, 5000);
-        bmwi3.Refuel();
-        AnsiConsole.MarkupLine($"  [green]After charge: {bmwi3.availableRange} km[/]\n");
+try { bmw3.Refuel(); } 
+catch (Exception ex) { AnsiConsole.MarkupLine($"[red]Ошибка заправки: {Markup.Escape(ex.Message)}[/]"); }
+AnsiConsole.MarkupLine($"  [green]After refuel: {bmw3.availableRange} km[/]\n");
 
-        AnsiConsole.MarkupLine("[bold yellow]--- All Cars Drive 100 km ---[/]\n");
-        foreach (var car in cars)
-        {
-            DriveWithProgress(car, 100);
-        }
+DriveWithProgress(bmwM3, 5000);
+try { bmwM3.Refuel(); } 
+catch (Exception ex) { AnsiConsole.MarkupLine($"[red]Ошибка заправки: {Markup.Escape(ex.Message)}[/]"); }
+AnsiConsole.MarkupLine($"  [green]After refuel: {bmwM3.availableRange} km[/]\n");
+
+DriveWithProgress(bmwi3, 5000);
+try { bmwi3.Refuel(); } 
+catch (Exception ex) { AnsiConsole.MarkupLine($"[red]Ошибка зарядки: {Markup.Escape(ex.Message)}[/]"); }
+AnsiConsole.MarkupLine($"  [green]After charge: {bmwi3.availableRange} km[/]\n");
+
+AnsiConsole.MarkupLine("[bold yellow]--- All Cars Drive 100 km ---[/]\n");
+foreach (var car in cars)
+{
+    DriveWithProgress(car, 100);
+}
 
     
     var table = new Table()

@@ -18,19 +18,21 @@ sealed class ElectricCar:BasicCar
     
     protected internal override void Drive(int km)
     {
-        if (km <= availableRange)
-        {   Console.WriteLine($"Машина проехала {km} км");
-            availableRange -= km;
-            batteryCapacityKwh -= km / kmPerKwh;
-        }
-
-        else
-        {
-           Console.WriteLine($"Машина проехала {availableRange} км и {type} закончился");
-           availableRange = 0;
-           batteryCapacityKwh = 0;
-        }
+    if (km < 0)
+        throw new ArgumentException("Расстояние не может быть отрицательным.");
+    if (availableRange == 0)
+        throw new InvalidOperationException($"Батарея разрядилась, зарядите {model}.");
+    
+    if (km <= availableRange)
+        availableRange -= km;
+    else
+    {
+        int driven = availableRange;
+        availableRange = 0;
+        throw new InvalidOperationException(
+            $"батареи хватило только на {driven} км. {type} закончился.");
     }
+}
     protected internal override void Refuel()
     {
         availableRange = maxRange;

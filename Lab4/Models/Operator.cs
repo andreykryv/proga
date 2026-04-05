@@ -37,12 +37,7 @@ class Operator
                 operatorInstance = new Operator();
             return operatorInstance;
     }
-    public static Operator GetInstance(string name, int count, decimal cost)
-    {
-         if (operatorInstance == null)
-                operatorInstance = new Operator(name, count, cost);
-            return operatorInstance;
-    }
+    
     public static void ResetInstance()
 {
     operatorInstance = null;

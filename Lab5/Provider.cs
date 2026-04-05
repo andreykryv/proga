@@ -27,13 +27,16 @@ public string Name => name;
 
 internal void AddTariff(Tariff tariff)
     {
-      tariffs.Add(tariff);
-
+        if (tariff == null)
+            throw new ArgumentNullException(nameof(tariff), "Тариф не может быть null.");
+        tariffs.Add(tariff);
     }
 internal void AddClient(Client client) 
-    {
+    {if (client == null)
+        throw new ArgumentException("Количество клиентов не может быть отрицательным.");
+   
       clients.Add(client);        
-
+    
 
     }
 internal decimal SummaryProfit(){
@@ -47,7 +50,9 @@ internal decimal SummaryProfit(){
  return SummaryProfit; 
 }
 internal Client GreatestClient()
-{   Client GreatestClient = clients[0];
+{  if (clients.Count == 0)
+        throw new InvalidOperationException("Список клиентов пуст.");
+     Client GreatestClient = clients[0];
     decimal maxCost = clients[0].CalculateCost();
 
     foreach (Client client in clients)

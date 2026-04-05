@@ -34,10 +34,26 @@ Console.WriteLine(unlimited.ToString());
 Console.WriteLine(a.ToString());
 Console.WriteLine(b.ToString());
 Console.WriteLine(c.ToString());
+try
+{
+    Console.WriteLine($"Клиент, заплативший наибольшую стоимость за услуги {ATS.GreatestClient()}") ;
+}
+catch (InvalidOperationException ex)
+{
+    
+     Console.WriteLine($"Ошибка: {ex.Message}");
+}
+try
+{
+    Console.WriteLine($"Суммарный профит: {ATS.SummaryProfit()}");
 
-Console.WriteLine($"Клиент, заплативший наибольшую стоимость за услуги {ATS.GreatestClient()}") ;
-Console.WriteLine($"Суммарный профит: {ATS.SummaryProfit()}");
 
+}
+catch (ArgumentException ex)
+{
+    
+    Console.WriteLine($"Ошибка: {ex.Message}");
+}
 
 
 

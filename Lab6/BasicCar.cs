@@ -34,19 +34,21 @@ class BasicCar:Car
 
     protected internal override void Drive(int km)
     {
-        
-        
-        if (km <= availableRange)
-        {   Console.WriteLine($"Машина проехала {km} км");
-            availableRange -= km;
-        }
-
-        else
-        {
-           Console.WriteLine($"Машина проехала {availableRange} км и {type} закончился");
-           availableRange = 0;
-        }
+    if (km < 0)
+        throw new ArgumentException("Расстояние не может быть отрицательным.");
+    if (availableRange == 0)
+        throw new InvalidOperationException($"Топливо закончилось, заправьте {model}.");
+    
+    if (km <= availableRange)
+        availableRange -= km;
+    else
+    {
+        int driven = availableRange;
+        availableRange = 0;
+        throw new InvalidOperationException(
+            $"Топлива хватило только на {driven} км. {type} закончился.");
     }
+}
 
     protected internal new void Rename(string model)
     {
