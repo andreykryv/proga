@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "iW+KTueIbgk=",
+  "dgSpecHash": "CoVg4ivIKDM=",
   "success": true,
   "projectFilePath": "/home/andrey/Документы/553504/second_sem_lrs/proga/Lab7/Lab7.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/andrey/.nuget/packages/spectre.console/0.55.0/spectre.console.0.55.0.nupkg.sha512",
+    "/home/andrey/.nuget/packages/spectre.console.ansi/0.55.0/spectre.console.ansi.0.55.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,2 +1,2 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿//вариант 9
 Console.WriteLine("Hello, World!");
