@@ -10,7 +10,12 @@ class Circle
     {
         this.x = x;
         this.y = y;
+         if (radius <= 0)
+        {
+             throw new ArgumentException("Радиус не может быть отрицательным.");
+        }
         this.radius = radius;
+       
 
     }
 
@@ -18,12 +23,7 @@ class Circle
     internal double Y => y;
     internal double Radius=> radius;
 
-
-
-    private double _area; // резервное поле
-    private double _perimeter;
-
-
+    
 
 
     public double this[int index]
@@ -44,16 +44,12 @@ class Circle
 
 internal double Area
 {
-    get { if (_area == 0) // lazy computation
-                _area = pi * radius * radius;
-            return _area; } }
+    get {   return pi * radius * radius; } }
     
 
 internal double Perimeter
 {
-    get {    if (_perimeter == 0)
-                _perimeter = 2 * pi * radius;
-            return _perimeter;
+    get {   return 2 * pi * radius;
     
 }}
     public override string ToString()
@@ -61,4 +57,59 @@ internal double Perimeter
         return $@"Радиус: {radius} Координаты центра окружности(x,y): ({x},{y})
         Area: {Area} Периметр: {Perimeter} ";
     }
+public static bool operator >(Circle a, Circle b)
+{
+    return a.Area > b.Area;
+}
+public static bool operator <(Circle a,Circle b)
+    {
+        return a.Area < b.Area;
+    }
+public static bool operator ==(Circle a, Circle b)
+{ return a.Area == b.Area;  }
+
+public static bool operator !=(Circle a, Circle b)
+{ return a.Area != b.Area;  }
+
+ public static Circle operator ++(Circle c)
+{
+    return new Circle(c.X, c.Y, c.Radius+1);
+}
+ public static Circle operator --(Circle c)
+{
+    return new Circle(c.X, c.Y, c.Radius-1);
+}
+public static Circle operator -(Circle c)
+{
+    return new Circle(c.X, c.Y, c.Radius - 1);
+}
+public static Circle operator *(Circle c,double d)
+{return new Circle (c.X,c.Y,c.Radius * d);}
+public static Circle operator /(Circle c, double d)
+{return new Circle (c.X,c.Y,c.Radius / d);}
+public static bool operator false(Circle c)
+{
+    return c.X == 0 && c.Y == 0;
+}
+public static bool operator true(Circle c)
+{
+    return c.X != 0 || c.Y != 0;
+}
+public static implicit operator Circle(double d)
+{
+    return new Circle(0, 0, d);
+}
+public static explicit operator double(Circle d)
+{
+    return d.Radius;
+}
+
+
+
+
+
+
+
+
+
 }
