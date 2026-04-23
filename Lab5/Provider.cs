@@ -1,87 +1,62 @@
-//главный клаcc 
-
-
-
-
-
+//главный клаcc
 
 class Provider
 {
-
     private string name;
-   
-    
-    internal Provider(string name )
+
+    internal Provider(string name)
     {
         this.name = name;
-   
-        
-
-
     }
-public string Name => name;
 
- /// коллекции 
-   internal List<Tariff> tariffs = new List<Tariff>();
-   internal List<Client> clients = new List<Client>();
+    public string Name => name;
 
-internal void AddTariff(Tariff tariff)
+    /// коллекции
+    internal List<Tariff> tariffs = new List<Tariff>();
+    internal List<Client> clients = new List<Client>();
+
+    internal void AddTariff(Tariff tariff)
     {
         if (tariff == null)
             throw new ArgumentNullException(nameof(tariff), "Тариф не может быть null.");
         tariffs.Add(tariff);
     }
-internal void AddClient(Client client) 
-    {if (client == null)
-        throw new ArgumentException("Количество клиентов не может быть отрицательным.");
-   
-      clients.Add(client);        
-    
 
+    internal void AddClient(Client client)
+    {
+        if (client == null)
+            throw new ArgumentNullException(nameof(client), "Клиент не может быть null.");
+        clients.Add(client);
     }
-internal decimal SummaryProfit(){
-    decimal SummaryProfit = 0;
-    foreach (Client client in clients)
+
+    internal decimal SummaryProfit()
     {
-        SummaryProfit += client.CalculateCost();
-       
-    } 
+        decimal summaryProfit = 0;
+        foreach (Client client in clients)
+        {
+            summaryProfit += client.CalculateCost();
+        }
+        return summaryProfit;
+    }
 
- return SummaryProfit; 
-}
-internal Client GreatestClient()
-{  if (clients.Count == 0)
-        throw new InvalidOperationException("Список клиентов пуст.");
-     Client GreatestClient = clients[0];
-    decimal maxCost = clients[0].CalculateCost();
-
-    foreach (Client client in clients)
+    internal Client GreatestClient()
     {
-       if (client.CalculateCost() >= maxCost)
-       {maxCost = client.CalculateCost();
-        GreatestClient = client;
-       }
-    
-    } 
-     
-     return GreatestClient;
-} 
+        if (clients.Count == 0)
+            throw new InvalidOperationException("Список клиентов пуст.");
 
+        Client greatestClient = clients[0];
+        decimal maxCost = clients[0].CalculateCost();
 
+        foreach (Client client in clients)
+        {
+            decimal cost = client.CalculateCost();
+            if (cost > maxCost)
+            {
+                maxCost = cost;
+                greatestClient = client;
+            }
+        }
 
-
-
-
-
-
-
-    
-   
-
-
-
-
-
-
-    
+        return greatestClient;
+    }
 }

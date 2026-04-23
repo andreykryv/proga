@@ -3,4 +3,4 @@
 
 
 
-    enum TariffType { Basic, Standard, Premium, Unlimited };
+    enum TariffType { Basic, Standard, Premium, Unlimited }
