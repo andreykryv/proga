@@ -46,7 +46,7 @@
           "dependencies": {
             "Spectre.Console": {
               "target": "Package",
-              "version": "[0.54.0, )"
+              "version": "[0.55.2, )"
             }
           },
           "imports": [
