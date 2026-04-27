@@ -30,16 +30,18 @@ class SportsCar:BasicCar
     if (availableRange == 0)
         throw new InvalidOperationException($"Топливо закончилось, заправьте {model}.");
     
-    if (km <= availableRange)
+       if (km > availableRange)
+        {
+            int driven = availableRange;
+            availableRange = 0;
+            throw new InvalidOperationException(
+                $"Проехали только {driven} км из {km} км. Топливо закончилось, заправьте {model}.");
+        }
+
+        // Если топлива достаточно, просто вычитаем расстояние
         availableRange -= km;
-    else
-    {
-        int driven = availableRange;
-        availableRange = 0;
-        throw new InvalidOperationException(
-            $"Топлива хватило только на {driven} км. {type} закончился.");
     }
-}
+
     protected internal new void Rename(string model)
     {
         base.Rename(model);

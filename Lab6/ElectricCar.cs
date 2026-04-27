@@ -23,15 +23,17 @@ sealed class ElectricCar:BasicCar
     if (availableRange == 0)
         throw new InvalidOperationException($"Батарея разрядилась, зарядите {model}.");
     
-    if (km <= availableRange)
+     if (km > availableRange)
+        {
+            int driven = availableRange;
+            availableRange = 0;
+            throw new InvalidOperationException(
+                $"Проехали только {driven} км из {km} км. Батарея разрядилась, зарядите {model}.");
+        }
+
+        // Если заряда достаточно, просто вычитаем расстояние
         availableRange -= km;
-    else
-    {
-        int driven = availableRange;
-        availableRange = 0;
-        throw new InvalidOperationException(
-            $"батареи хватило только на {driven} км. {type} закончился.");
-    }
+    
 }
     protected internal override void Refuel()
     {
