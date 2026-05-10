@@ -1,0 +1,4 @@
+interface IDisplayable
+{
+    string GetInfo();
+}

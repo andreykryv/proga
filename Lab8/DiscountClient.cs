@@ -1,11 +1,11 @@
 class DiscountClient : Client
 {
-    private const decimal discount = 0.15m;
+    private decimal discount = 0.15m;
 
 
-    internal DiscountClient(int discount)
+    internal DiscountClient(decimal discount)
     {
-        this.discount = discount;
+        base(discount);
     }
     
     public decimal Discount => discount;

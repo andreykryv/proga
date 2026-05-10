@@ -1,4 +1,4 @@
-class Client
+class Client : IBillable, IDisplayable
 {
      private int id;
     private string name;
@@ -31,11 +31,11 @@ class Client
         trafficMb += mb;
     }
 
-    internal decimal CalculateCost()
+    internal virtual decimal CalculateCost()
     {
         return tariff.MonthlyFee + trafficMb * tariff.PricePerMb;
     }
-     public override string GetInfo()
+     public  string GetInfo()
     {
         return $"Абонент:{name} id:{id} тариф:{tariff} использовано интернета:{trafficMb}";
     }
