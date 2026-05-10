@@ -32,7 +32,7 @@ class Client
         trafficMb += mb;
     }
 
-    internal decimal CalculateCost()
+    internal  abstract decimal  CalculateCost()
     {
         return tariff.MonthlyFee + trafficMb * tariff.PricePerMb;
     }

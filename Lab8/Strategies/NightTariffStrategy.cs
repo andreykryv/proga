@@ -1,0 +1,4 @@
+class NightTariffStrategy : ICostCalculationStrategy
+{
+    
+}

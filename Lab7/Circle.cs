@@ -1,4 +1,4 @@
-class Circle
+public class Circle
 {   const double pi = Math.PI;
     private double x;
     private double y;
@@ -70,6 +70,22 @@ public static bool operator ==(Circle a, Circle b)
 
 public static bool operator !=(Circle a, Circle b)
 { return a.Area != b.Area;  }
+
+
+public override bool Equals(object? obj)
+    {
+        if (obj is Circle other)
+        {
+            return this.Area == other.Area;
+        }
+        return false;
+    }
+
+    public override int GetHashCode()
+    {
+        return Area.GetHashCode();
+    }
+
 
  public static Circle operator ++(Circle c)
 {
