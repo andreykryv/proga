@@ -1,9 +1,13 @@
 class DiscountStrategy : ICostCalculationStrategy
 {
-    internal DiscountStrategy(DiscountClient discount)
+    internal decimal DiscountStrategy(DiscountClient discount)
     {
         this.discount = discount;
     }
+    internal decimal Calculate(Client client)
+    {
+            (client.MonthlyFee + client.TrafficMb * client.PricePerMb) * (1 - discountclient.discount)
+    }
 
-    (MonthlyFee + TrafficMb * PricePerMb) * (1 - discount)
+
 }
