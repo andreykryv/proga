@@ -1,4 +1,4 @@
-class Client : IBillable, IDisplayable
+class Client :  IDisplayable
 {
      private int id;
     private string name;
@@ -17,12 +17,14 @@ class Client : IBillable, IDisplayable
         this.name = name;
         this.tariff = tariff;
         this.trafficMb = 0;
+     
     }
 
         public int Id => id;
     public string Name => name;
     public Tariff Tariff => tariff;
     public decimal TrafficMb => trafficMb;
+  
 
     internal void AddTraffic(decimal mb)
     {

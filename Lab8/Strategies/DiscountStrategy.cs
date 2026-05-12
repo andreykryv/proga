@@ -4,9 +4,9 @@ class DiscountStrategy : ICostCalculationStrategy
     {
         this.discount = discount;
     }
-    internal decimal Calculate(Client client)
+    public decimal Calculate(IBillable client)
     {
-            (client.MonthlyFee + client.TrafficMb * client.PricePerMb) * (1 - discountclient.discount)
+            (client.MonthlyFee + client.TrafficMb * client.PricePerMb) * (1 - discountclient.discount);
     }
 
 
