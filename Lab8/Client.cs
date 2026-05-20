@@ -1,4 +1,4 @@
-class Client :  IDisplayable
+class Client :  IDisplayable,IBillable 
 {
      private int id;
     private string name;
@@ -24,7 +24,9 @@ class Client :  IDisplayable
     public string Name => name;
     public Tariff Tariff => tariff;
     public decimal TrafficMb => trafficMb;
-  
+    public decimal MonthlyFee => tariff.MonthlyFee;
+    public decimal PricePerMb => tariff.PricePerMb;
+    
 
     internal void AddTraffic(decimal mb)
     {

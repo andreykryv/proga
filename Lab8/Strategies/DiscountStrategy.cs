@@ -1,12 +1,16 @@
 class DiscountStrategy : ICostCalculationStrategy
-{
-    internal decimal DiscountStrategy(DiscountClient discount)
+
+
+{private readonly decimal _discount;
+    internal DiscountStrategy(DiscountClient discount)
     {
-        this.discount = discount;
+        _discount = discount;
     }
+     public decimal Discount => discountClient.discount;
+
     public decimal Calculate(IBillable client)
     {
-            (client.MonthlyFee + client.TrafficMb * client.PricePerMb) * (1 - discountclient.discount);
+            return (client.MonthlyFee + client.TrafficMb * client.PricePerMb) * (1 - _discount);
     }
 
 

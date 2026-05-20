@@ -3,7 +3,7 @@
 
 
 
-class Tariff : IBillable
+class Tariff 
 {
     private string name;
     private TariffType type;
