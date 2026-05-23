@@ -1,8 +1,8 @@
-//главный клаcc
-
+/// <summary>Главный класс — интернет-оператор.</summary>
 class Operator
 {
     private string name;
+    internal List<Client> clients = new List<Client>();
 
     internal Operator(string name)
     {
@@ -11,12 +11,6 @@ class Operator
 
     public string Name => name;
 
-    /// коллекции
-    
-    internal List<Client> clients = new List<Client>();
-
-    
-
     internal void AddClient(Client client)
     {
         if (client == null)
@@ -24,15 +18,15 @@ class Operator
         clients.Add(client);
     }
 
-    internal decimal SummaryProfit()//итерирует через IBillable
+    /// <summary>
+    /// Суммарная стоимость услуг по всем клиентам.
+    /// Итерирует через IBillable — демонстрация полиморфизма.
+    /// </summary>
+    internal decimal SummaryProfit()
     {
-        decimal summaryProfit = 0;
-        foreach (Client client in clients)
-        {
-            summaryProfit += client.CalculateCost();
-        }
-        return summaryProfit;
+        decimal total = 0;
+        foreach (IBillable billable in clients)   // клиенты через интерфейсную ссылку
+            total += billable.CalculateCost();
+        return total;
     }
-
-    
 }

@@ -1,0 +1,15 @@
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab9/bin/Debug/net10.0/Lab9
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab9/bin/Debug/net10.0/Lab9.deps.json
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab9/bin/Debug/net10.0/Lab9.runtimeconfig.json
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab9/bin/Debug/net10.0/Lab9.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab9/bin/Debug/net10.0/Lab9.pdb
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab9/obj/Debug/net10.0/Lab9.GeneratedMSBuildEditorConfig.editorconfig
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab9/obj/Debug/net10.0/Lab9.AssemblyInfoInputs.cache
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab9/obj/Debug/net10.0/Lab9.AssemblyInfo.cs
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab9/obj/Debug/net10.0/Lab9.csproj.CoreCompileInputs.cache
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab9/obj/Debug/net10.0/Lab9.sourcelink.json
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab9/obj/Debug/net10.0/Lab9.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab9/obj/Debug/net10.0/refint/Lab9.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab9/obj/Debug/net10.0/Lab9.pdb
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab9/obj/Debug/net10.0/Lab9.genruntimeconfig.cache
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab9/obj/Debug/net10.0/ref/Lab9.dll

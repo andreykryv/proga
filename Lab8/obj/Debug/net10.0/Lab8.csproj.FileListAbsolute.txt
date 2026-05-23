@@ -4,3 +4,16 @@
 /home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/obj/Debug/net10.0/Lab8.AssemblyInfo.cs
 /home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/obj/Debug/net10.0/Lab8.csproj.CoreCompileInputs.cache
 /home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/obj/Debug/net10.0/Lab8.sourcelink.json
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/bin/Debug/net10.0/Lab8
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/bin/Debug/net10.0/Lab8.deps.json
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/bin/Debug/net10.0/Lab8.runtimeconfig.json
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/bin/Debug/net10.0/Lab8.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/bin/Debug/net10.0/Lab8.pdb
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/bin/Debug/net10.0/Spectre.Console.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/bin/Debug/net10.0/Spectre.Console.Ansi.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/obj/Debug/net10.0/Lab8.csproj.Up2Date
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/obj/Debug/net10.0/Lab8.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/obj/Debug/net10.0/refint/Lab8.dll
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/obj/Debug/net10.0/Lab8.pdb
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/obj/Debug/net10.0/Lab8.genruntimeconfig.cache
+/home/andrey/Документы/553504/second_sem_lrs/proga/Lab8/obj/Debug/net10.0/ref/Lab8.dll
