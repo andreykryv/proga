@@ -1,7 +1,8 @@
+using Spectre.Console;
+
 // =========================================================
 //  Лабораторная работа №9 — Кухонный процессор
-//  Паттерны: Bridge + Builder
-//  Множественное наследование через интерфейсы
+//  Паттерны: Bridge + Builder + Spectre.Console
 // =========================================================
 
 // ----- строители -----
@@ -20,29 +21,25 @@ var processors = new List<ProcessorBase>
     Director.GetGrindingBuiltin ("Miele XL Chef",         builtinBuilder),
 };
 
-// ----- обходим коллекцию и вызываем все доступные методы -----
+// ----- выводим предопределённые процессоры -----
+AnsiConsole.Write(new Rule("[yellow]Предопределённые процессоры[/]"));
 foreach (var processor in processors)
 {
-    Console.WriteLine(new string('═', 55));
-
-    // GetInfo — переопределён в каждом классе по-своему
-    processor.GetInfo();
-
-    // Process — Bridge: делегируется конкретной стратегии
-    processor.Process();
-
-    // Проверяем и вызываем дополнительные интерфейсы
-    if (processor is IMixer mixer)
-        mixer.Mix();
-
-    if (processor is IBlender blender)
-        blender.Blend();
-
-    if (processor is IDoughMixer doughMixer)
-        doughMixer.MixDough();
-
-    if (processor is IJuicer juicer)
-        juicer.ExtractJuice();
+    InteractiveProcessorBuilder.DemonstrateProcessor(processor);
+    Console.WriteLine();
 }
 
-Console.WriteLine(new string('═', 55));
+// ----- интерактивное создание пользовательских процессоров -----
+AnsiConsole.Write(new Rule("[green]Интерактивное создание процессоров[/]"));
+
+bool createAnother = true;
+while (createAnother)
+{
+    Console.WriteLine();
+    var userProcessor = InteractiveProcessorBuilder.CreateProcessorInteractively();
+    InteractiveProcessorBuilder.DemonstrateProcessor(userProcessor);
+    
+    createAnother = AnsiConsole.Confirm("[yellow]Создать ещё один процессор?[/]");
+}
+
+AnsiConsole.MarkupLine("[bold green]Работа программы завершена.[/]");
