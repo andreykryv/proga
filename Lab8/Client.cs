@@ -4,9 +4,10 @@ class Client : IDisplayable, IBillable
     private string name;
     private Tariff tariff;
     private decimal trafficMb;
-    // Strategy pattern: стратегия расчёта стоимости, меняется в runtime
-    // protected — чтобы DiscountClient мог проверить наличие стратегии
-    protected ICostCalculationStrategy? strategy;
+
+    
+ protected ICostCalculationStrategy strategy;
+ 
 
     internal Client(int id, string name, Tariff tariff)
     {
@@ -21,6 +22,7 @@ class Client : IDisplayable, IBillable
         this.name = name;
         this.tariff = tariff;
         this.trafficMb = 0;
+         this.strategy = new StandardStrategy();
     }
 
     public int Id => id;
@@ -31,8 +33,10 @@ class Client : IDisplayable, IBillable
     // IBillable
     public decimal MonthlyFee => tariff.MonthlyFee;
     public decimal PricePerMb => tariff.PricePerMb;
+public decimal CalculateCost() => strategy.Calculate(this);
 
-    /// <summary>Установить стратегию расчёта — Strategy pattern.</summary>
+    
+public decimal? CurrentDiscount => (strategy as DiscountStrategy)?.Discount;
     internal void SetStrategy(ICostCalculationStrategy newStrategy)
     {
         strategy = newStrategy;
@@ -46,15 +50,7 @@ class Client : IDisplayable, IBillable
     }
 
     // Полиморфный метод: переопределяется в DiscountClient
-    public virtual decimal CalculateCost()
-    {
-        // Если стратегия задана — делегируем ей (Strategy pattern)
-        if (strategy != null)
-            return strategy.Calculate(this);
 
-        // Стандартный расчёт по умолчанию
-        return tariff.MonthlyFee + trafficMb * tariff.PricePerMb;
-    }
 
     // IDisplayable
     public string GetInfo()

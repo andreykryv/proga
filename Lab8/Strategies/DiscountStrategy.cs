@@ -1,5 +1,6 @@
 /// <summary>Стратегия со скидкой: применяет фиксированный процент к итоговой сумме.</summary>
-class DiscountStrategy : ICostCalculationStrategy
+class DiscountStrategy : ICostCalculationStrategy, IDiscountable
+
 {
     private readonly decimal discount;
 
@@ -18,4 +19,5 @@ class DiscountStrategy : ICostCalculationStrategy
         decimal baseCost = client.Tariff.MonthlyFee + client.TrafficMb * client.Tariff.PricePerMb;
         return baseCost * (1 - discount);
     }
+    public decimal ApplyDiscount(decimal amount) => amount * (1 - discount);
 }

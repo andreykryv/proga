@@ -17,7 +17,9 @@ var isp = new Operator("ByNet ISP");
 // Начальные демо-клиенты (можно удалить, но оставим для удобства)
 var alice = new Client(1, "Алиса", basic);
 var bob = new Client(2, "Боб", standard);
-var carol = new DiscountClient(3, "Кэрол", premium, 0.20m);
+var carol = new Client(3, "Кэрол", premium);
+carol.SetStrategy(new DiscountStrategy(0.20m));
+carol.AddTraffic(3000);
 alice.AddTraffic(500);
 bob.AddTraffic(1200);
 carol.AddTraffic(3000);
@@ -75,7 +77,7 @@ while (!exit)
     }
 }
 
-// ---------- Вспомогательные методы ----------
+
 void ShowAllClients(List<Client> clients)
 {
     if (!clients.Any())
@@ -94,7 +96,7 @@ void ShowAllClients(List<Client> clients)
 
     foreach (var c in clients)
     {
-        string discountInfo = (c is DiscountClient dc) ? $"{dc.Discount:P0}" : "—";
+        string discountInfo = c.CurrentDiscount.HasValue ? $"{c.CurrentDiscount.Value:P0}" : "—";
         table.AddRow(
             c.Id.ToString(),
             c.Name,
@@ -130,7 +132,8 @@ void AddNewClient(Operator op, List<Tariff> availableTariffs)
         else
         {
             decimal discount = InputHelper.GetDiscount();
-            var client = new DiscountClient(newId, name, tariff, discount);
+           var client = new Client(newId, name, tariff);
+client.SetStrategy(new DiscountStrategy(discount));
             op.AddClient(client);
             AnsiConsole.MarkupLine($"[green]Клиент {name} (ID {newId}) со скидкой {discount:P0} добавлен.[/]");
         }
