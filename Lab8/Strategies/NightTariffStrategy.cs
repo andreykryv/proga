@@ -1,7 +1,7 @@
 class NightTariffStrategy : ICostCalculationStrategy
 {
-    public decimal Calculate(Client client)
+    public decimal Calculate(IBillable client)
     {
-         return client.Tariff.MonthlyFee + client.TrafficMb * client.Tariff.PricePerMb * 0.5m;
-    }}
-    
+        return client.MonthlyFee + client.TrafficMb * client.PricePerMb * 0.5m;
+    }
+}

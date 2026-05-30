@@ -1,4 +1,5 @@
+
 interface ICostCalculationStrategy
 {
-    decimal Calculate(Client client);
+    decimal Calculate(IBillable client);
 }

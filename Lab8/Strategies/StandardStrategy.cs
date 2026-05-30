@@ -1,7 +1,7 @@
 class StandardStrategy : ICostCalculationStrategy
 {
-    public decimal Calculate(Client client)
-    {   
-        return client.Tariff.MonthlyFee + client.TrafficMb * client.Tariff.PricePerMb;
+    public decimal Calculate(IBillable client)
+    {
+        return client.MonthlyFee + client.TrafficMb * client.PricePerMb;
     }
 }
