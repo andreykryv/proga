@@ -5,7 +5,8 @@ class Client : IDisplayable, IBillable
     private Tariff tariff;
     private decimal trafficMb;
     // Strategy pattern: стратегия расчёта стоимости, меняется в runtime
-    private ICostCalculationStrategy? strategy;
+    // protected — чтобы DiscountClient мог проверить наличие стратегии
+    protected ICostCalculationStrategy? strategy;
 
     internal Client(int id, string name, Tariff tariff)
     {

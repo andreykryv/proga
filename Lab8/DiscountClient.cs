@@ -1,7 +1,4 @@
-/// <summary>
-/// Клиент с фиксированной скидкой.
-/// Реализует IDiscountable (явная реализация для демонстрации кастинга).
-/// </summary>
+
 class DiscountClient : Client, IDiscountable
 {
     private readonly decimal discount;
@@ -26,7 +23,12 @@ class DiscountClient : Client, IDiscountable
     // Переопределение полиморфного метода
     public override decimal CalculateCost()
     {
-        decimal baseCost = base.CalculateCost();
+        // Если стратегия установлена — она имеет приоритет (Strategy pattern)
+        if (strategy != null)
+            return strategy.Calculate(this);
+
+        // Иначе — базовый расчёт со скидкой DiscountClient
+        decimal baseCost = MonthlyFee + TrafficMb * PricePerMb;
         // Применяем скидку через интерфейс — демонстрация кастинга
         IDiscountable discountable = this;
         return discountable.ApplyDiscount(baseCost);
