@@ -1,4 +1,4 @@
-class DiscountStrategy : ICostCalculationStrategy, IDiscountable
+class DiscountStrategy : ICostCalculationStrategy, IHasDiscount
 {
     private readonly decimal discount;
 
@@ -9,13 +9,13 @@ class DiscountStrategy : ICostCalculationStrategy, IDiscountable
         this.discount = discount;
     }
 
-    public decimal Discount => discount;
+    public decimal Discount          => discount;               
+    public decimal EffectiveDiscount => discount;               
+    public string  DiscountLabel     => $"скидка {discount:P0}"; 
 
-    public decimal Calculate(IBillable client)
+    public decimal Calculate(decimal monthlyFee, decimal trafficMb, decimal pricePerMb)
     {
-        decimal baseCost = client.MonthlyFee + client.TrafficMb * client.PricePerMb;
+        decimal baseCost = monthlyFee + trafficMb * pricePerMb;
         return baseCost * (1 - discount);
     }
-
-    public decimal ApplyDiscount(decimal amount) => amount * (1 - discount);
 }
